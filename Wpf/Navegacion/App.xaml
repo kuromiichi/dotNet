@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Navegacion"
              xmlns:vm="clr-namespace:Navegacion.ViewModels"
              xmlns:v="clr-namespace:Navegacion.Views"
-             StartupUri="Views\MainView.xaml">
+             StartupUri="Views/MainView.xaml">
     <Application.Resources>
          <ResourceDictionary>
              <DataTemplate DataType="{x:Type vm:MainViewModel}">

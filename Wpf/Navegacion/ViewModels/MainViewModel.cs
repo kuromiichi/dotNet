@@ -20,7 +20,7 @@ public class MainViewModel : ObservableObject
     public EmployeesViewModel EmployeesViewModel { get; set; }
     public SettingsViewModel SettingsViewModel { get; set; }
 
-    public RelayCommand ActivateDepartmentViewCommand { get; set; }
+    public RelayCommand ActivateDepartmentsViewCommand { get; set; }
     public RelayCommand ActivateEmployeesViewCommand { get; set; }
     public RelayCommand ActivateSettingsViewCommand { get; set; }
 
@@ -32,7 +32,7 @@ public class MainViewModel : ObservableObject
 
         _activeView = DepartmentsViewModel;
         
-        ActivateDepartmentViewCommand = new RelayCommand(o => ActiveView = DepartmentsViewModel);
+        ActivateDepartmentsViewCommand = new RelayCommand(o => ActiveView = DepartmentsViewModel);
         ActivateEmployeesViewCommand = new RelayCommand(o => ActiveView = EmployeesViewModel);
         ActivateSettingsViewCommand = new RelayCommand(o => ActiveView = SettingsViewModel);
     }
