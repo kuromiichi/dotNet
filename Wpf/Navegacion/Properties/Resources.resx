@@ -27,4 +27,10 @@
     <data name="RadioButtonSettings" xml:space="preserve">
         <value>Settings</value>
     </data>
+    <data name="ButtonSpanish" xml:space="preserve">
+        <value>Spanish</value>
+    </data>
+    <data name="ButtonEnglish" xml:space="preserve">
+        <value>English</value>
+    </data>
 </root>

@@ -6,19 +6,19 @@
              xmlns:v="clr-namespace:Navegacion.Views"
              StartupUri="Views/MainView.xaml">
     <Application.Resources>
-         <ResourceDictionary>
-             <DataTemplate DataType="{x:Type vm:MainViewModel}">
-                 <v:MainView/>
-             </DataTemplate>
-             <DataTemplate DataType="{x:Type vm:DepartmentsViewModel}">
-                 <v:DepartmentsView/>
-             </DataTemplate>
-             <DataTemplate DataType="{x:Type vm:EmployeesViewModel}">
-                 <v:EmployeesView/>
-             </DataTemplate>
-             <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
-                 <v:SettingsView/>
-             </DataTemplate>
-         </ResourceDictionary>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type vm:MainViewModel}">
+                <v:MainView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:DepartmentsViewModel}">
+                <v:DepartmentsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:EmployeesViewModel}">
+                <v:EmployeesView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+                <v:SettingsView />
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

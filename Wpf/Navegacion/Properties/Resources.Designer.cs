@@ -60,6 +60,24 @@ namespace Navegacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string ButtonEnglish {
+            get {
+                return ResourceManager.GetString("ButtonEnglish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spanish.
+        /// </summary>
+        public static string ButtonSpanish {
+            get {
+                return ResourceManager.GetString("ButtonSpanish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Departments.
         /// </summary>
         public static string RadioButtonDepartments {

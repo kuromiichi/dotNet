@@ -4,13 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Navegacion.Views"
+             xmlns:vm="clr-namespace:Navegacion.ViewModels"
+             xmlns:p="clr-namespace:Navegacion.Properties"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="Root">
     <Grid>
-        <TextBlock HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="24">
-            VISTA DE AJUSTES
-        </TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button Content="{x:Static p:Resources.ButtonEnglish}"
+                Command="{Binding EnglishCommand, ElementName=Root}"
+                />
+        <Button Content="{x:Static p:Resources.ButtonSpanish}" 
+                Command="{Binding SpanishCommand, ElementName=Root}"
+                Grid.Column="1"/>
     </Grid>
 </UserControl>
