@@ -102,7 +102,7 @@ namespace GestionEmpleadosInterfaz
             {
                 empController.CrearEmpleado(
                     new(dni, nombre, correo, telefono, puesto, departamento)
-                )
+                );
 
                 ActualizarEmpleados();
                 MessageBox.Show(

@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="GestionEmpDepWPF.CustomControls.IconButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:GestionEmpDepWPF.CustomControls"
+             mc:Ignorable="d"
+             d:DesignHeight="50" d:DesignWidth="300"
+             x:Name="Root">
+    <Border BorderBrush="LightGray"
+            BorderThickness="1"
+            CornerRadius="10"
+            Padding="5"
+            Margin="0,0,0,5"
+            Height="50"
+            MouseLeftButtonDown="Border_OnMouseLeftButtonDown">
+        <Border.Style>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="Background" Value="White" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsChecked, ElementName=RadioButton}" Value="True">
+                        <DataTrigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                                    To="LightGray"
+                                                    Duration="0:0:0.2" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </DataTrigger.EnterActions>
+                        <DataTrigger.ExitActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                                    To="White"
+                                                    Duration="0:0:0.2" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </DataTrigger.ExitActions>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <RadioButton x:Name="RadioButton"
+                         GroupName="{Binding RadioButtonGroup, ElementName=Root}"
+                         Visibility="Collapsed" />
+            <Path
+                Data="{Binding SvgData, ElementName=Root}"
+                Fill="DimGray"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" />
+            <TextBlock Text="{Binding Text, ElementName=Root}"
+                       Grid.Column="1"
+                       VerticalAlignment="Center" />
+        </Grid>
+    </Border>
+</UserControl>

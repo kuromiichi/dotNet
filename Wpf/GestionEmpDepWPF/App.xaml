@@ -1,0 +1,26 @@
+﻿<Application x:Class="GestionEmpDepWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GestionEmpDepWPF"
+             xmlns:vm="clr-namespace:GestionEmpDepWPF.ViewModels"
+             xmlns:views="clr-namespace:GestionEmpDepWPF.Views">
+    <Application.Resources>
+         <ResourceDictionary>
+            <DataTemplate DataType="{x:Type vm:MainViewModel}">
+                <views:MainView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:DepartmentsViewModel}">
+                <views:DepartmentsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:EmployeesViewModel}">
+                <views:EmployeesView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:GraphsViewModel}">
+                <views:GraphsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:CreateEmployeeViewModel}">
+                <views:CreateEmployeeView />
+            </DataTemplate>
+         </ResourceDictionary>
+    </Application.Resources>
+</Application>
