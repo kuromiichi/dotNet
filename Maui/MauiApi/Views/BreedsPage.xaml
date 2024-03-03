@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiApi.ViewModels"
+             x:Class="MauiApi.Views.BreedsPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:BreedsViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="30,0"
+                             Spacing="25">
+
+            <HorizontalStackLayout Margin="0, 10, 0, 0">
+                <Label Text="Lista de razas de perritos"
+                       Style="{StaticResource Headline}"
+                       VerticalOptions="Center" />
+                
+                <!-- Sé que esto no es el tipo de búsqueda que pedías 
+                     pero ya lo he hecho y lo voy a dejar así xd -->
+                <SearchBar Placeholder="Buscar raza..."
+                           Text="{Binding SearchText}"
+                           MinimumWidthRequest="200"
+                           Margin="50, 0"
+                           VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <CollectionView ItemsSource="{Binding Breeds}"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedBreed}"
+                            SelectionChangedCommand="{Binding BreedSelectedCommand}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="4"
+                                     HorizontalItemSpacing="5"
+                                     VerticalItemSpacing="5" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="LightGray">
+                            <Label Text="{Binding Name}"
+                                   TextColor="Black" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

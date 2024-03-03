@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiApi.ViewModels"
+             x:Class="MauiApi.Views.BreedDetailsPage"
+             Title="{Binding Breed.Name}">
+
+    <ContentPage.BindingContext>
+        <viewmodels:BreedDetailsViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid ColumnDefinitions="3*, 2*"
+          RowDefinitions="Auto, *"
+          Margin="0, 10, 0, 0">
+
+        <Label Text="{Binding Breed.Name}"
+               Style="{StaticResource Headline}"
+               HorizontalOptions="Center" />
+
+        <Grid ColumnDefinitions="*, *"
+              RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+              Margin="100, 0, 0, 0"
+              VerticalOptions="Center"
+              Grid.Row="1">
+
+            <Label Text="Name"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="0"
+                   Grid.Column="0" />
+            <Label Text="{Binding Breed.Name, FallbackValue='No disponible'}"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="0"
+                   Grid.Column="1" />
+
+            <Label Text="Bred For"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="1"
+                   Grid.Column="0" />
+            <Label Text="{Binding Breed.BredFor, FallbackValue='No disponible'}"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="1"
+                   Grid.Column="1" />
+
+            <Label Text="Breed Group"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="2"
+                   Grid.Column="0" />
+            <Label Text="{Binding Breed.BreedGroup, FallbackValue='No disponible'}"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="2"
+                   Grid.Column="1" />
+
+            <Label Text="Life Span"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="3"
+                   Grid.Column="0" />
+            <Label Text="{Binding Breed.LifeSpan, FallbackValue='No disponible'}"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="3"
+                   Grid.Column="1" />
+
+            <Label Text="Temperament"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="4"
+                   Grid.Column="0" />
+            <Label Text="{Binding Breed.Temperament, FallbackValue='No disponible'}"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="4"
+                   Grid.Column="1" />
+
+            <Label Text="Origin"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="5"
+                   Grid.Column="0" />
+            <Label Text="{Binding Breed.Origin, FallbackValue='No disponible'}"
+                   FontSize="24"
+                   Margin="0,0,20,0"
+                   Grid.Row="5"
+                   Grid.Column="1" />
+
+        </Grid>
+
+        <Image Source="{Binding BreedImage, FallbackValue='dotnet_bot.png'}"
+               Grid.Row="1"
+               Grid.Column="1"
+               Aspect="AspectFill" />
+
+    </Grid>
+
+</ContentPage>

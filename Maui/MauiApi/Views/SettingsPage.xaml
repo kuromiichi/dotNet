@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApi.Views.SettingsPage"
+             xmlns:viewmodels="clr-namespace:MauiApi.ViewModels">
+
+    <ContentPage.BindingContext>
+        <viewmodels:SettingsViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout VerticalOptions="Center">
+
+        <Grid WidthRequest="800"
+              RowDefinitions="Auto, Auto, Auto"
+              ColumnDefinitions="2*, 5*"
+              RowSpacing="20">
+
+            <Label Text="Clave de API"
+                   VerticalOptions="Center" />
+
+            <Grid ColumnDefinitions="*, Auto"
+                  Grid.Column="1">
+                <Entry Text="{Binding ApiKey}"
+                       Placeholder="Clave de API"
+                       Margin="0,0,10,0" />
+                <Button Text="Obtener clave"
+                        Command="{Binding GetApiKeyCommand}"
+                        Grid.Column="1" />
+            </Grid>
+
+            <Label Text="Número de perritos"
+                   VerticalOptions="Center"
+                   Grid.Row="1" />
+            <HorizontalStackLayout Grid.Row="1"
+                                   Grid.Column="1">
+                <Entry Text="{Binding DogNumber}"
+                       IsReadOnly="True"
+                       Margin="0,0,10,0" />
+                <Stepper Minimum="1"
+                         Value="{Binding DogNumber}" />
+            </HorizontalStackLayout>
+
+        </Grid>
+
+        <Button Text="Guardar ajustes"
+                Command="{Binding SaveCommand}"
+                Margin="0,20,0,0"
+                HorizontalOptions="Center" />
+
+    </VerticalStackLayout>
+</ContentPage>
