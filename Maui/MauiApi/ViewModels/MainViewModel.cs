@@ -17,8 +17,12 @@ partial class MainViewModel : ObservableObject
         LoadData();
     }
 
+    private static MainViewModel _instance;
+
     public MainViewModel()
     {
+        _instance = this;
+        DetectApiKey();
         LoadData();
     }
 
@@ -27,5 +31,18 @@ partial class MainViewModel : ObservableObject
         var dogService = new DogService();
         await dogService.GetDogs();
         Dogs = new ObservableCollection<Dog>(dogService.Dogs);
+    }
+
+    [ObservableProperty]
+    private bool _isApiKeySet;
+
+    [ObservableProperty]
+    private bool _isApiKeyNotSet;
+
+    public static void DetectApiKey()
+    {
+        _instance.IsApiKeySet = !string.IsNullOrEmpty(Preferences.Default.Get("ApiKey", string.Empty));
+        _instance.IsApiKeyNotSet = !_instance.IsApiKeySet;
+        if (_instance.IsApiKeySet) _instance.LoadData();
     }
 }

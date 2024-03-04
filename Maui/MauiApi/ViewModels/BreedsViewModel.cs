@@ -55,7 +55,6 @@ partial class BreedsViewModel : ObservableObject
     {
         if (SelectedBreed == null) return;
 
-        System.Diagnostics.Debug.WriteLine($"SELECTION CHANGED: {SelectedBreed.Name}");
         var parameter = new Dictionary<string, object> { { "Breed", SelectedBreed } };
         await Shell.Current.GoToAsync("breeddetails", parameter);
         SelectedBreed = null;

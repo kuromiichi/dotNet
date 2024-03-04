@@ -24,7 +24,8 @@
                     SemanticProperties.Hint="Obtiene nueva información sobre perros de la API"
                     HorizontalOptions="Center" />
 
-            <Frame BackgroundColor="{AppThemeBinding Light=Gray, Dark=Black}">
+            <Frame BackgroundColor="{AppThemeBinding Light=Gray, Dark=Black}"
+                   IsVisible="{Binding IsApiKeySet}">
                 <CollectionView ItemsSource="{Binding Dogs}">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal" />
@@ -38,6 +39,11 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </Frame>
+
+            <Label Text="No se ha encontrado una clave de API. Puedes obtenerla en los ajustes."
+                   Style="{StaticResource SubHeadline}"
+                   HorizontalOptions="Center"
+                   IsVisible="{Binding IsApiKeyNotSet}" />
 
         </VerticalStackLayout>
     </ScrollView>

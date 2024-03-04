@@ -25,6 +25,7 @@ partial class SettingsViewModel : ObservableObject
         Preferences.Default.Set("ApiKey", ApiKey);
         Preferences.Default.Set("DogNumber", DogNumber);
         Toast.Make("Ajustes guardados", ToastDuration.Short).Show();
+        MainViewModel.DetectApiKey();
     }
 
     public SettingsViewModel()
