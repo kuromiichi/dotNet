@@ -5,7 +5,7 @@
              xmlns:vm="clr-namespace:GestionEmpDepWPF.ViewModels"
              xmlns:views="clr-namespace:GestionEmpDepWPF.Views">
     <Application.Resources>
-         <ResourceDictionary>
+        <ResourceDictionary>
             <DataTemplate DataType="{x:Type vm:MainViewModel}">
                 <views:MainView />
             </DataTemplate>
@@ -21,6 +21,6 @@
             <DataTemplate DataType="{x:Type vm:CreateEmployeeViewModel}">
                 <views:CreateEmployeeView />
             </DataTemplate>
-         </ResourceDictionary>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
